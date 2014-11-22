@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>ddf language</title>
+<script Language="JavaScript">
+window.defaultStatus = "Connected to the Official DDF page.";
+</script>
+ <link rel="stylesheet" type="text/css" href="ddfstylesheet.css">
+
+</head>
+
+<BODY>
+
+<font face="Verdana, Tahoma" size="2">
+<!--end of header-->
+
+<A NAME="top"><B>switches</B></a></font>
+<P>
+Stored in the switch.ddf file or in the DDFSWTH data lump. 
+<p>
+switch.ddf allows you to change the animations shown when switches are activated. Each entry consists of a unique name, enclosed in square brackets, plus a series of commands that specify the on and off frames of animation and switching sounds.
+
+
+
+<p>
+Names should be descriptive of the background and switch textures, but are used in the map editor when adding switches to your maps, so should be no longer than 8 characters (without spaces).
+<br>
+&nbsp
+<p>
+<B><FONT SIZE=+1>COMMANDS</font></b>
+<p>
+The commands used for switch entries are as follows:
+<p>
+
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2>
+<TR><TH>COMMAND</TH><TH>TYPE</TH><TH>EXPLANATION</TH></TR>
+
+<TR><TD>ON_TEXTURE</TD><TD>[string]</TD><TD>
+The texture shown when the switch is 'on' -- Refer to name of entry in wadfile.</TD></TR>
+
+<TR><TD>OFF_TEXTURE</TD><TD>[string]</TD><TD>
+The texture shown when the switch is 'off' -- Refer to name of entry in wadfile.</TD></TR>
+
+<TR><TD>ON_SOUND</TD><TD>[sound]</TD><TD>
+The sound the switch makes when switched to the 'on' position -- Refer to entry in sounds.ddf</TD></TR>
+
+<TR><TD>OFF_SOUND</TD><TD>[sound]</TD><TD>
+The sound the switch makes when switched to the 'off' position -- Refer to entry in sounds.ddf</TD></TR>
+
+<TR><TD>TIME</TD><TD>[time]</TD><TD>
+How long the button stays with the ON texture until it
+changes back to the OFF texture</TD></TR>
+
+</TABLE>
+&nbsp
+<p>
+<B><FONT SIZE=+1>NOTES</font></b>
+<p>
+Exit-level switches always use the [SWTCHX] sound regardless of the sounds listed in this file.
+
+&nbsp
+<p>
+<B><FONT SIZE=+1>EXAMPLES</font></b>
+<p>
+The following is an example of complete switch entry:
+<p>
+
+<TABLE WIDTH=95% BORDER=1 CELLSPACING=0 CELLPADDING=2 FRAME="box">
+<TR><TD>
+<FONT SIZE=2>
+[SW1BRCOM]<BR>
+ON_TEXTURE = "SW1BRCOM";<BR>
+OFF_TEXTURE = "SW2BRCOM";<BR>
+ON_SOUND=SWTCHN1;<BR>
+OFF_SOUND=SWTCHN2;<BR>
+</FONT>
+</TD></TR>
+</TABLE>
+
+
+<!--begin footer-->
+<P>
+back to <A HREF="#top">top</A>
+<P>
+DDF docs written by Andy Baker and Ziggy Gnarly, with updates by Andrew Apted, Andy Brewood and Luke Brennan.<BR>
+Site design by Fanatic (with graphics and modifications by Ziggy Gnarly). Problems with the docs, errors and comments should be directed to the EDGE team.<P>
+&copy; EDGE Team 1998 - 2005.
+</body>
+</html>

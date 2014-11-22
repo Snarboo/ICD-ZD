@@ -29,6 +29,7 @@ weapons/chainsaw/sawup2						DSSAWUP
 weapons/chainsaw/sawful2					DSSAWFUL
 weapons/chainsaw/gas						DSSAWGAS
 weapons/chainsaw/hit2						DSSAWHIT
+weapons/chainsaw/start						DSITEM2 // - Added by Snarboo
 
 //Pistols
 weapons/1911/hammer							DSHAMMR

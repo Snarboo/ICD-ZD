@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>ddf language</title>
+<script Language="JavaScript">
+window.defaultStatus = "Connected to the Official DDF page.";
+</script>
+ <link rel="stylesheet" type="text/css" href="ddfstylesheet.css">
+
+</head>
+
+<BODY>
+
+
+<font face="Verdana, Tahoma" size="2">
+<!--end of header-->
+
+<A NAME="top"><B>animations</B></a></font>
+
+<P>
+Stored in the anims.ddf file or in the DDFANIM data lump.
+<P>
+Anims.ddf allows you to change floor and ceiling animation or wall animation sequences. Each entry consists of a unique name, enclosed in square brackets, plus a series of commands that specify the first and last frames of the animation, as well as how frequently it changes.
+<P>
+Names should be descriptive, but are used in the map editor when adding animations to your maps, so should be no longer than 8 characters (without spaces).
+<br>
+&nbsp
+<p>
+<B><FONT SIZE=+1>COMMANDS</font></b>
+<p>
+The commands used for animation entries are as follows:
+<p>
+
+
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=2 BGCOLOR="#00AEEA">
+<TR><TH><B>COMMAND</B></TH><TH><B>TYPE</B></TH><TH><B>EXPLANATION</B></TH></TR>
+
+<TR><TD>TYPE</TD><TD>[special] </TD><TD>
+Either 'FLAT' for a floor texture animation, or 'TEXTURE' for a wall
+texture animation.</TD></TR>
+
+<TR><TD>FIRST</TD><TD>[string]</TD><TD>
+The first texture in the animation -- Refer to name of entry in wadfile.</TD></TR>
+
+<TR><TD>LAST</TD><TD>[string]</TD><TD>
+The last texture in the animation -- Refer to name of entry in wadfile.</TD></TR>
+
+<TR><TD>SPEED</TD><TD>[time] </TD><TD>
+The time to display each frame in tics(T). Where 8T is normal Doom speed and 4T is double normal speed.</TD></TR>
+
+<TR><TD>SEQUENCE</TD><TD>[string] </TD><TD>
+Use it to specify the full animation sequence.  Names cannot be used twice.  <br>For example: SEQUENCE = TEX1, TEX2, TEX3, TEX5, TEX8;
+</TD></TR>
+
+
+</TABLE>
+&nbsp
+<p>
+<B><FONT SIZE=+1>NOTES</font></b>
+<p>
+The full animation sequence consists of all the flats / textures
+in the WAD file between the first and last entry.
+<P>
+You should make sure that you don't muddle up your entries in the wad. 
+<p>
+E.g 
+<br>
+MYANIMA
+<br>
+MYANIMB<br>
+MYANIMC
+
+<p>
+ rather than 
+<P>
+MYANIMB
+<br>
+MYANIMA
+<br>
+MYANIMC
+<p>
+If you don't do your flats/ textures properly, EDGE will give you an
+error message.
+<P>
+
+
+</font>
+
+<P>
+You can also use quotes around names with an underscore in it:<BR>
+
+<PRE>	[MY_ANIM]
+        TYPE  = FLAT;
+	FIRST = "MY_AN_1";
+	LAST  = "MY_AN_2";
+	SPEED = 8T;</PRE>
+
+If you leave out the quotes, DDF converts an underscore to a space, so the
+name MY_AN_1 would be read as "MY AN 1". The other obvious solution is to
+never use an underscore in texture names you plan on animating.
+
+
+
+&nbsp
+<p>
+<B><FONT SIZE=+1>EXAMPLES</font></b>
+<p>
+The following are examples of complete animation entries:
+<p>
+<TABLE WIDTH=95% BORDER=1 CELLSPACING=0 CELLPADDING=3 FRAME="box" BGCOLOR="#00AEEA" >
+<TR><TD>
+<FONT SIZE=2>
+[NUKAGE1]<BR>
+TYPE  = FLAT; // floor or ceiling animation<BR>
+FIRST = "NUKAGE1";<BR>
+LAST  = "NUKAGE3";<BR>
+SPEED = 8T;<BR>
+
+<P>
+[WALL_BLUE]<BR>
+TYPE  = TEXTURE; // wall animation <BR>
+FIRST = "TEXTURE1";<BR>
+LAST  = "TEXTURE3";<BR>
+SPEED = 8T;<BR>
+
+
+</FONT>
+</TD></TR>
+</TABLE>
+
+<!--begin footer-->
+<P>
+back to <A HREF="#top">top</A>
+<P>
+DDF docs written by Andy Baker and Ziggy Gnarly, with updates by Andrew Apted, Andy Brewood and Luke Brennan<BR>
+Site design by Fanatic (with graphics and modifications by Ziggy Gnarly). Problems with the docs, errors and comments should be directed to the EDGE team.<P>
+&copy; EDGE Team 1998 - 2005.
+</body>
+</html>
