@@ -1,8 +1,8 @@
-ACTOR ICD_InfantryRifle : BaseWeapon
+ACTOR ICD_InfantryRifle : BaseWeapon replaces PlasmaRifle
 {
 	Game Doom
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive2 10
+	Weapon.AmmoGive2 30 // Should give you 30 ammo?! (Snarboo)
 	Weapon.AmmoType "ICD_InfantryRifleMagazine"
 	Weapon.AmmoType2 "ICD_RifleAmmo"
 	Inventory.PickupMessage "$GotRifle"
@@ -77,6 +77,9 @@ ACTOR ICD_InfantryRifle : BaseWeapon
 		Flash:
 			RIFF A 2 BRIGHT
 			RIFF B 3 BRIGHT
+			Stop
+		Spawn: // - Added by Snarboo
+			PLAS A -1
 			Stop
 	}
 }
