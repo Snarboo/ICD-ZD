@@ -62,7 +62,7 @@ ACTOR ICD_Remington : BaseWeapon
 			TNT1 A 4
 			SHTG I 3
 		Reload.Actual:
-			SHTG J 2
+			SHTG J Random(2,4) // Also not 100% accurate, but it's closer to how it was in EDGE! (Snarboo)
 			SHTG M 3
 			SHTG K 3
 			SHTG L 3
