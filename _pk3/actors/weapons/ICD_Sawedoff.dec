@@ -68,7 +68,7 @@ ACTOR ICD_SawedOff : BaseWeapon
 		Reload: // Huh. The first reload is always faster. The fuck.
 			SAWD A 0 A_WeaponReady // - Changed by Snarboo
 			TNT1 A 0 A_JumpIfInventory("ICD_SawedOffMagazine",6,"Ready")
-			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "ReloadStart") // - Changed by Snarboo
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 1, "Reload.Start") // - Changed by Snarboo
 			Goto Ready
 		Reload.Start: // Added this for readability purposes (Snarboo)
 			SAWD A 1
