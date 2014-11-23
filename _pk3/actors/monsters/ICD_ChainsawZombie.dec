@@ -10,10 +10,11 @@ ACTOR ICD_ChainsawZombie
 	PainChance 200
 	MONSTER
 	+Floorclip
-	SeeSound "weapons/chainsaw/sawup2" // STARTCOMBAT_SOUND=SAWFUL2;
+	SeeSound "weapons/chainsaw/sawful2" // STARTCOMBAT_SOUND=SAWFUL2;
 	PainSound "grunt/pain"
 	DeathSound "grunt/death"
 	ActiveSound "grunt/active"
+	DropItem "ICD_Chainsaw"
 	// Obituary "$OB_ZOMBIE" // "%o was killed by a zombieman."
 	// CLOSE_ATTACK=PLAYER_SAW;
 	// SPARE_ATTACK=CHAINSAW_SMOKE;
@@ -60,14 +61,13 @@ ACTOR ICD_ChainsawZombie
 		PLA8 I 6 
 		PLA8 J 6 A_NoBlocking
 		PLA8 K 6 //DROPITEM(CHAINSAW),
-		PLA4 L 10 
-		PLA4 M 10 
-		PLA4 N 0 //JUMP(DEATH:9,15%),
+		PLA4 LM 10
+		PLA4 N 0 A_Jump(38,2) //JUMP(DEATH:9,15%),
 		PLA4 N -1
 		Stop
 		PLA4 N 500 
-		PLA4 N 3 //DROPITEM(FLIES),
-		PLA4 N -1 //DROPITEM(FLIES);
+		PLA4 N 3 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		PLA4 N -1 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES);
 		Stop
 	XDeath:
 		PLA8 L 8
@@ -75,12 +75,12 @@ ACTOR ICD_ChainsawZombie
 		PLA8 NRST 5
 		PLA4 U 5 A_NoBlocking
 		PLA4 V 5
-		PLA4 W 0 //JUMP(OVERKILL:11,20%),
+		PLA4 W 0 A_Jump(38,2) //JUMP(OVERKILL:11,20%),
 		PLA4 W -1
 		Stop
 		PLA4 W 400
-		PLA4 W 3 //DROPITEM(FLIES),
-		PLA4 W -1 //DROPITEM(FLIES);
+		PLA4 W 3 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		PLA4 W -1 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES);
 		Stop
 	Raise:
 		PLA8 KJIH 5
