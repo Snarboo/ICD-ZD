@@ -12,7 +12,7 @@ script "ICD_Recoil" (int kick, int multiplier, int kickforce)
     for(int i = 0; i < 2; i++){
         SetActorPitch(0, GetActorPitch(0) - ((kick*multiplier)+(i*kickforce)));
 		alteredpitch = GetActorPitch(0);
-		Log(i:((kick * 100)+i));
+	 // Log(i:((kick * 100)+i)); - Debug purposes (Snarboo)
         Delay(1);
     }
     //Then smooth back down.
@@ -20,12 +20,13 @@ script "ICD_Recoil" (int kick, int multiplier, int kickforce)
     for(int ib = 2; ib > 0; ib--){
         SetActorPitch(0, GetActorPitch(0) + ((kick*multiplier)+(ib*kickforce)));
 		alteredpitch = GetActorPitch(0);
-		Log(i:((kick * 100)+i));
+	//	Log(i:((kick * 100)+i)); - Debug purposes (Snarboo)
         Delay(1);
     }
 	SetActorPitch(0, playerpitch);
 }
 
+/* - Debug purpose (Snarboo)
 SCRIPT "ICD_RecoilDebug" ENTER
 {
 	while(true){
@@ -33,3 +34,4 @@ SCRIPT "ICD_RecoilDebug" ENTER
 		delay(25);
 	}
 }
+*/
