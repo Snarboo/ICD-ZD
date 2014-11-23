@@ -176,3 +176,47 @@ ACTOR ICD_SoulMedikit5 : Health
 			Stop
 	}
 }
+
+// Berserk Pack Definitions - Added by Snarboo
+
+ACTOR ICD_BerserkHealth : Health
+// The berserk pack could heal you up to 200 health!
+{
+  Inventory.Amount 100
+  Inventory.MaxAmount 200
+  +INVENTORY.ALWAYSPICKUP
+}
+
+ACTOR ICD_GS_EmptyBerserker : ICD_GS_UsedItemTemplate
+{
+	Scale 0.75
+	States
+	{
+	Spawn:
+		PSTR B 2 A_PlaySound("items/stimpackmedikitpickup", CHAN_VOICE)
+		// Doesn't seem to play properly? Hmm
+		PSTR B 200
+		PSTR B 1 A_FadeOut(0.01)
+		Wait
+	}
+}
+
+ACTOR ICD_Berserker : Berserk replaces Berserk
+// Most of the values are taken directly from the DDF files
+{
+	Scale 0.75
+	Inventory.PickupSound "*pain"
+	Inventory.PickupFlash "ICD_GS_EmptyBerserker" // Bit hacky, but it works
+	States
+	{
+	Spawn:
+		PSTR C -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("ICD_BerserkHealth", 1)
+		TNT1 A 0 A_GiveInventory("PowerStrength", 1)
+//		TNT1 A 0 A_SelectWeapon("ICD_Knife") - Does it jump to the knife?
+		Stop
+	}
+}
+
