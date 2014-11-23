@@ -6,4 +6,4 @@ PELLETS = ICD_SatchelAmmo
 ROCKETS = ICD_RocketAmmo
 NAILS 	= ICD_KnifeAmmo
 CELLS 	= ICD_RifleAmmo
-GAS 	= NYI
+GAS 	= ICD_FlakAmmo

@@ -1,0 +1,19 @@
+/* Flak Ammo added by Snarboo */
+
+ACTOR ICD_FlakAmmo : Ammo replaces BlurSphere
+{
+	Radius 20
+	Height 16
+    Inventory.Amount 8
+    Inventory.MaxAmount 24
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 40
+    Inventory.PickupMessage "$GotFlakShells"
+	Inventory.PickupSound "items/item1"
+	States
+	{
+	Spawn:
+		SHEL C -1 
+		Stop
+	}
+}

@@ -51,7 +51,7 @@
 
 //Slot # 0 (Accessories)
 #include "actors/weapons/icd_flareweapon.dec"
-#include "actors/weapons/icd_silentpistol.dec"
+#include "actors/weapons/icd_silentpistol.dec" // Crudux Cruo
 
 //Effects
 #include "actors/effects/icd_flareeffect.dec"
@@ -66,6 +66,7 @@
 #include "actors/ammo/icd_bullets.dec"
 #include "actors/ammo/icd_rockets.dec"
 #include "actors/ammo/icd_satchelammo.dec"
+#include "actors/ammo/icd_gas.dec" // - Added by Snarboo
 
 //Other ICD-SE Stuff
 #include "actors/other/icd_flies.dec"
