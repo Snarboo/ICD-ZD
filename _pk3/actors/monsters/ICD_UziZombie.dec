@@ -15,7 +15,7 @@ ACTOR ICD_UziZombie
 	DeathSound "grunt/death"
 	ActiveSound "grunt/active"
 	Obituary "$OB_ZOMBIE" // "%o was killed by a zombieman."
-	DropItem "ICD_9mmClip"
+	DropItem "ICD_UziPickup"
 	States
 	{
 	Spawn:
