@@ -90,6 +90,7 @@ ACTOR ICD_SPistolMagazine : Ammo
 	+INVENTORY.IGNORESKILL
 }
 
+/* Duplicate (Snarboo)
 ACTOR ICD_EmptyPistolClipDrop
 {
 	Height 4
@@ -115,3 +116,4 @@ ACTOR ICD_EmptyPistolClipDrop
 			Stop
 	}
 }
+*/
