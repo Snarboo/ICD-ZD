@@ -3,7 +3,7 @@
 
 ACTOR ICD_HeavyWeaponDude : ChaingunGuy replaces ChaingunGuy // replaces directly for now until other spawned zombies are in
 {
-	DropItem "ICD_Minigun"
+	DropItem "ICD_MinigunPickup"
 	SeeSound "monsters/HeavyWeaponDude/See"
 	PainSound "monsters/HeavyWeaponDude/Pain"
 	DeathSound "monsters/HeavyWeaponDude/Death"

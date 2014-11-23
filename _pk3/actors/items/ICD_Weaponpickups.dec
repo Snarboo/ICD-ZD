@@ -90,7 +90,7 @@ ACTOR ICD_UziPickup : CustomInventory replaces Chaingun
 	}
 }
 
-ACTOR ICD_MinigunPickup : CustomInventory replaces RocketLauncher
+ACTOR ICD_AssaultRiflePickup : CustomInventory replaces RocketLauncher //Renamed from ICD_MinigunPickup to stop potential conflicts. -ww
 {
 	Radius 20
 	Height 16
