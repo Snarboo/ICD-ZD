@@ -165,3 +165,23 @@ ACTOR ICD_MinigunPickup : CustomInventory // Added by wildweasel.
 			Stop
 	}
 }
+
+ACTOR ICD_40MMPickup : CustomInventory replaces CellPack // - Added by Snarboo
+// This was taken almost directly from the DDF file (Snarboo)
+{
+	Radius 20
+	Height 16
+	Scale 0.8
+	Inventory.PickupSound "weapons/assaultrifle/clipdrop"
+	Inventory.PickupMessage "$Got40mm"
+	States
+	{
+	Spawn:
+		GLNC A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("ICD_40MM", 1)
+		TNT1 A 0 A_GiveInventory("ICD_RocketAmmo", 5)
+		Stop
+	}
+}
