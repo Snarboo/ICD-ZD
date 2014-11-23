@@ -61,7 +61,6 @@ ACTOR ICD_UziZombie
 		POSS I 3
 		POSS J 5 A_NoBlocking
 		POSS K 5
-		TNT1 A 0 A_DropItem("ICD_KnifeAmmo",-1,26)
 		TNT1 A 0 A_Jump(38,2)
 		POSS L -1
 		Stop
