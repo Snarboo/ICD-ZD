@@ -44,3 +44,4 @@ GotShotgun="You got the shotgun!";
 GotMinigun="You got the minigun!";
 GotBeretta="You got the 9mm pistol!";
 GotMagnum="You got the magnum!";
+GotRifle="You got the Infantry rifle!";
