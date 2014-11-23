@@ -146,3 +146,22 @@ ACTOR ICD_DualiesPickup : CustomInventory replaces GreenArmor
 			Stop
 	}
 }
+
+ACTOR ICD_MinigunPickup : CustomInventory // Added by wildweasel.
+{
+	Radius 20
+	Height 16
+	Scale 0.66
+	Inventory.PickupMessage "$GotMinigun"
+	Inventory.PickupSound "weapons/assaultrifle/clipdrop"
+	States
+	{
+		Spawn:
+			MINN A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("ICD_Minigun", 1)
+			TNT1 A 0 A_GiveInventory("ICD_RifleAmmo", 100)
+			Stop
+	}
+}
