@@ -24,22 +24,22 @@ ACTOR ICD_ChainsawZombie
 		PLA8 A 5 A_Look
 		Loop
 	See:
-		PLA8 E 16 A_PlaySound("weapons/chainsaw/sawidl2") //PLAYSOUND(SAWIDL2),
-		PLA8 F 12 A_PlaySound("weapons/chainsaw/sawidl2") //PLAYSOUND(SAWIDL2),
+		PLA8 E 16 A_PlaySound("weapons/chainsaw/sawidle2") //PLAYSOUND(sawidle2),
+		PLA8 F 12 A_PlaySound("weapons/chainsaw/sawidle2") //PLAYSOUND(sawidle2),
 		PLA8 E 20 A_PlaySound("weapons/chainsaw/sawup2") //PLAYSOUND(SAWUP2),
-		PLA8 A 0 A_PlaySound("weapons/chainsaw/sawidl2") //PLAYSOUND(SAWIDL2),
+		PLA8 A 0 A_PlaySound("weapons/chainsaw/sawidle2") //PLAYSOUND(sawidle2),
 		PLA8 A 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
 		PLA8 A 4 A_Chase
 		PLA8 A 3 A_Chase
-		PLA8 B 0 A_PlaySound("weapons/chainsaw/sawidl2") //PLAYSOUND(SAWIDL2),
+		PLA8 B 0 A_PlaySound("weapons/chainsaw/sawidle2") //PLAYSOUND(sawidle2),
 		PLA8 B 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
 		PLA8 B 4 A_Chase
 		PLA8 B 3 A_Chase
-		PLA8 C 0 A_PlaySound("weapons/chainsaw/sawidl2") //PLAYSOUND(SAWIDL2),
+		PLA8 C 0 A_PlaySound("weapons/chainsaw/sawidle2") //PLAYSOUND(sawidle2),
 		PLA8 C 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
 		PLA8 C 4 A_Chase
 		PLA8 C 3 A_Chase
-		PLA8 D 0 A_PlaySound("weapons/chainsaw/sawidl2") //PLAYSOUND(SAWIDL2),
+		PLA8 D 0 A_PlaySound("weapons/chainsaw/sawidle2") //PLAYSOUND(sawidle2),
 		PLA8 D 0 A_CustomMissile("ICD_ChainsawSmokeSpawner") //SPARE_ATTACK,
 		PLA8 D 4 A_Chase
 		PLA8 D 3 A_Chase
