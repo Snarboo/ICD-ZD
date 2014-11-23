@@ -1,7 +1,7 @@
 // ICD heavy Weapon Dude
 // Ported by wildweasel.
 
-ACTOR ICD_HeavyWeaponDude : ChaingunGuy replaces ChaingunGuy // replaces directly for now until other spawned zombies are in
+ACTOR ICD_HeavyWeaponDude : ChaingunGuy
 {
 	DropItem "ICD_MinigunPickup"
 	SeeSound "monsters/HeavyWeaponDude/See"
