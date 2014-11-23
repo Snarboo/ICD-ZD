@@ -1,11 +1,10 @@
-ACTOR ICD_Chainsaw : BaseWeapon replaces Chainsaw
+ACTOR ICD_Chainsaw : BaseWeapon // - Changed by Snarboo
 {
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL // Must be here given the chainsaw's unusual ammo system (Snarboo)
 	Weapon.AmmoType "ICD_ChainsawGas"
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive 2150 // Mostly for debugging, can't remember if a weapon 
-						 // gives you "CLIPSIZE" amount of ammo on pickup... (Snarboo)
+//  Weapon.AmmoGive 2150 - Mostly for debugging (Snarboo)
 	Inventory.PickupMessage "$GotChainsaw"
 	Obituary "%o got too close to %k's chainsaw!"
 	Tag "Chainsaw"
