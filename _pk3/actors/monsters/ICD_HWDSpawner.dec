@@ -1,0 +1,34 @@
+// Chaingunner monster spawner.
+// Immoral Conduct originally had a choice of FIVE monsters that
+// would spawn in place of the Chaingunner. This file mimics that
+// functionality.
+
+// ICD used a series of percentage-based jumps, which I'm not in the mood
+// to replicate right now so I'm leaving all five zombies
+// as equal spawns in hopes nothing breaks too badly. -ww
+
+ACTOR ICD_HWDSpawner : RandomSpawner replaces ChaingunGuy
+{
+	DropItem "ICD_HeavyWeaponDude"//, 255, 
+	DropItem "ICD_UziZombie"//, 255,
+	DropItem "ICD_SSGSergeant"//, 255,
+	DropItem "ICD_M16Zombie"//, 255,
+	DropItem "ICD_ChainsawZombie"//, 255,
+}
+	
+/*
+[ZOMBIE_SPAWNER:65]
+RADIUS=56;
+HEIGHT=16;
+STATES(IDLE)=RLSR:C:0:NORMAL:NOTHING,
+		 RLSR:C:0:NORMAL:JUMP(IDLE:4,75%),
+		 RLSR:C:1:NORMAL:SPARE_ATTACK(ZOMBIE_SPAWN1),#REMOVE, //chaingun guy
+		 RLSR:C:0:NORMAL:JUMP(IDLE:6,60%),
+		 RLSR:C:1:NORMAL:SPARE_ATTACK(ZOMBIE_SPAWN2),#REMOVE, //uzi trooper
+		 RLSR:C:0:NORMAL:JUMP(IDLE:8,70%),
+		 RLSR:C:1:NORMAL:SPARE_ATTACK(ZOMBIE_SPAWN3),#REMOVE, //ssg sergeant
+		 RLSR:C:0:NORMAL:JUMP(IDLE:10,50%),
+		 RLSR:C:1:NORMAL:SPARE_ATTACK(ZOMBIE_SPAWN4),#REMOVE, //m16 marine
+		 RLSR:C:1:NORMAL:SPARE_ATTACK(ZOMBIE_SPAWN5),#REMOVE, //chainsaw marine
+		 RLSR:C:0:NORMAL:NOTHING,#REMOVE;
+*/
