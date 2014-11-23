@@ -2,7 +2,7 @@
 
 ACTOR ICD_UziZombie
 {
-	Health 20
+	Health 40
 	Radius 20
 	Height 56
 	Speed 8
