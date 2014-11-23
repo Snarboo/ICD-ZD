@@ -86,3 +86,4 @@
 #include "actors/monsters/icd_hwdspawner.dec" // HWD spawner.
 #include "actors/monsters/icd_heavyweapondude.dec" // Heavy weapon dude -ww
 #include "actors/monsters/icd_uzizombie.dec" // Uzi zombie.
+#include "actors/monsters/icd_chainsawzombie.dec" // Chainsaw zombie.
