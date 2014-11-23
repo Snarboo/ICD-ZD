@@ -10,9 +10,11 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.DisplayName "Marine"
 	Player.CrouchSprite "PLYC"
 	Player.StartItem "ICD_Pistol"
+	Player.StartItem "ICD_SilentPistol"
 	Player.StartItem "ICD_Knife"
 	Player.StartItem "ICD_FlareWeapon"
 	Player.StartItem "ICD_PistolMagazine", 12
+	Player.StartItem "ICD_SPistolMagazine", 12
 	Player.StartItem "Fist"
 	Player.StartItem "ICD_Bullets", 38
 	Player.StartItem "ICD_ArmorStart", 1
@@ -26,7 +28,7 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.WeaponSlot 6, ICD_AssaultRifle, ICD_InfantryRifle
 	Player.WeaponSlot 7, ICD_Revolver, ICD_Beretta, ICD_SawedOff, ICD_Minigun
 	Player.WeaponSlot 9, ICD_Satchel
-	Player.WeaponSlot 0, ICD_FlareWeapon
+	Player.WeaponSlot 0, ICD_FlareWeapon, ICD_SilentPistol
 
 	Player.ColorRange 112, 127
 	Player.ColorSet 0, "Green",				 0x70, 0x7F,	0x72

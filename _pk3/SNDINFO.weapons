@@ -34,6 +34,7 @@ weapons/chainsaw/start						DSITEM2 // - Added by Snarboo
 //Pistols
 weapons/1911/hammer							DSHAMMR
 weapons/1911/fire							DS1911
+weapons/1911-S/fire							DSSILENC // Crudux Cruo
 weapons/1911/clipout						DSPOUT
 weapons/1911/clipin							DSPIN
 weapons/1911/slide							DSPSLIDE
