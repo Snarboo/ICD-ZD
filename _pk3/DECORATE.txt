@@ -81,3 +81,4 @@
 #include "actors/monsters/icd_baronofhell.dec"
 #include "actors/monsters/icd_hellknight.dec"
 #include "actors/monsters/icd_cacodemon.dec"
+#include "actors/monsters/icd_heavyweapondude.dec" // Heavy weapon dude -ww

@@ -1,0 +1,64 @@
+// ICD heavy Weapon Dude
+// Ported by wildweasel.
+
+ACTOR ICD_HeavyWeaponDude : ChaingunGuy replaces ChaingunGuy // replaces directly for now until other spawned zombies are in
+{
+	DropItem "ICD_Minigun"
+	SeeSound "monsters/HeavyWeaponDude/See"
+	PainSound "monsters/HeavyWeaponDude/Pain"
+	DeathSound "monsters/HeavyWeaponDude/Death"
+	AttackSound "weapons/minigun/mini2"
+	States
+	{
+	Spawn:
+		CPOS A 5 A_Look
+		Loop
+	Missile:
+		CPOS U 1 A_PlaySound("weapons/minigun/mini1", CHAN_WEAPON)
+        CPOS U 12 A_FaceTarget
+        CPOS E 1 BRIGHT
+        CPOS F 2 BRIGHT A_CustomBulletAttack(4,4,1,random(4,16),"BulletPuff",CBAF_NORANDOM)
+        CPOS F 0 BRIGHT A_Jump(169,2)
+        CPOS F 0 BRIGHT //SPARE_ATTACK(PLAYER_TRACER_1),
+        CPOS E 0 BRIGHT //SPARE_ATTACK(ENEMY_SMOKE),
+        CPOS E 1 BRIGHT //SPARE_ATTACK(ENEMY_CASING4),
+        CPOS E 0 BRIGHT //SPARE_ATTACK(SPACER_SPAWN),
+        CPOS F 3 BRIGHT A_CustomBulletAttack(4,4,1,random(4,16),"BulletPuff",CBAF_NORANDOM)
+        CPOS E 1 BRIGHT //SPARE_ATTACK(ENEMY_CASING4),
+        CPOS U 1 A_CPosRefire
+        CPOS E 0 A_PlaySound("weapons/minigun/mini3", CHAN_WEAPON)
+        Goto Missile+2
+	Pain:
+		CPOS G 3
+        CPOS G 3 A_Pain
+        Goto See
+	Death:
+		CPOS H 5
+        CPOS I 4 A_Scream
+        CPOS J 4 A_NoBlocking
+        CPOS KLM 4
+        CPOS N 0 A_Jump(38,2)
+        CPOS N -1
+		Stop
+		CPOS N 500
+		CPOS N 3 //NORMAL:DROPITEM(FLIES),
+		CPOS N -1 //NORMAL:DROPITEM(FLIES);
+		Stop
+	}
+}
+/*STATES(OVERKILL)=CPOS:O:5:NORMAL:NOTHING,
+                 CPOS:P:5:NORMAL:MAKEOVERKILLSOUND,
+                 CPOS:Q:5:NORMAL:MAKEDEAD,
+                 CPOS:R:5:NORMAL:NOTHING,
+                 CPOS:S:5:NORMAL:NOTHING,
+                 CPOS:T:0:NORMAL:JUMP(OVERKILL:8,20%),
+                 CPOS:T:-1:NORMAL:NOTHING,
+		     CPOS:T:400:NORMAL:NOTHING,
+		     CPOS:T:3:NORMAL:DROPITEM(FLIES),
+		     CPOS:T:-1:NORMAL:DROPITEM(FLIES);
+STATES(RESPAWN)=CPOS:K:5:NORMAL:NOTHING,
+                CPOS:J:5:NORMAL:NOTHING,
+                CPOS:I:5:NORMAL:NOTHING,
+                CPOS:H:5:NORMAL:NOTHING,
+                #CHASE;
+STATES(GIB)=CPOS:T:-1:NORMAL:PLAYSOUND(CRUSH);*/

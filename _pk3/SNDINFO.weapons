@@ -87,6 +87,7 @@ weapons/grenade/hgren3						DSHGREN3
 weapons/grenade/noway						DSNOWAY
 
 //Minigun
+weapons/minigun/mini1						DSMINI1 // This was missing before --weasel
 weapons/minigun/mini2						DSMINI2
 weapons/minigun/mini3						DSMINI3
 weapons/minigun/mini4						DSMINI4

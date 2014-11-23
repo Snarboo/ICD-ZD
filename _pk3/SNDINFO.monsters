@@ -1,0 +1,8 @@
+// This SNDINFO lump didn't exist before. -weasel
+// Heavy Weapon Dude
+$random monsters/HeavyWeaponDude/See { cgsit1 cgsit2 }
+cgsit1 dscgsit1
+cgsit2 dscgsit2
+monsters/HeavyWeaponDude/Pain dscgpain
+monsters/HeavyWeaponDude/Death dscgdth1
+monsters/HeavyWeaponDude/Active dscgsact
