@@ -193,8 +193,9 @@ ACTOR ICD_GS_EmptyBerserker : ICD_GS_UsedItemTemplate
 	States
 	{
 	Spawn:
-		PSTR B 2 A_PlaySound("items/stimpackmedikitpickup", CHAN_VOICE)
-		// Doesn't seem to play properly? Hmm
+		TNT1 A 0 
+		// Herp derp, can't do anything in the first tic of a spawn state!
+		PSTR B 2 A_PlaySound("items/stimpackmedikitpickup", CHAN_BODY)
 		PSTR B 200
 		PSTR B 1 A_FadeOut(0.01)
 		Wait
