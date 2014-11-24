@@ -206,8 +206,9 @@ ACTOR ICD_40mmMagazine : Ammo
 ACTOR ICD_40mmGrenade
 // Projectiles with the Bounce special property in EDGE behave a bit unusually,
 // and will explode upon hitting any actor. This code has been massively cleaned
-// up. (Snarboo)
+// up, but still does not behave exactly as it did in EDGE. (Snarboo)
 {
+	Args 0, 0, 0, 0, 75
 	Radius 8
 	Height 8
 	Speed 30
@@ -218,32 +219,21 @@ ACTOR ICD_40mmGrenade
 	BounceFactor 0.5
 	PROJECTILE
 	-NOGRAVITY
-	+USEBOUNCESTATE
-	+BOUNCEONACTORS
-    var int user_40mmgrenadetic;
+	-BOUNCEONACTORS
+	-ALLOWBOUNCEONACTORS
 	States
 	{
 		Spawn:
 			GRNL A 1 A_SpawnItemEx("ICD_RPUFF",0,0,-6)
-			TNT1 A 0 A_SetUserVar("user_40mmgrenadetic",user_40mmgrenadetic+1)
-			TNT1 A 0 A_JumpIf(user_40mmgrenadetic>75,"True.Death")
+			TNT1 A 0 A_CountdownArg(4, "XDeath")
 			Loop
-	/*	Bounce:
-			GRNL A 1 A_PlaySound("weapons/40mm/bounce")
-			TNT1 A 0 A_SpawnItemEx("ICD_RPUFF",0,0,-6)
-			TNT1 A 0 A_SetUserVar("user_40mmgrenadetic",user_40mmgrenadetic+1)
-			TNT1 A 0 A_JumpIf(user_40mmgrenadetic>75,"True.Death")
-			Goto Spawn
-		========================================================================	
-		Why is this here? This bounce state seems unnecessary (Snarboo) */
 		Death:
 			GRNL A 1 A_ChangeFlag("SOLID", 0)
-			TNT1 A 0 A_SetUserVar("user_40mmgrenadetic",user_40mmgrenadetic+1)
-			TNT1 A 0 A_JumpIf(user_40mmgrenadetic>75,"True.Death")
+			TNT1 A 0 A_CountdownArg(4, "XDeath")
 			Loop
-		Bounce.Actor:
+		Crash:
 			// Intentional fall-thru (Snarboo)
-		True.Death:
+		XDeath:
 			TNT1 A 0 A_SpawnItemEx("ICD_40mmExplosion",0,0,-10,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_NOCHECKPOSITION)
 			Stop
 
