@@ -216,7 +216,7 @@ ACTOR ICD_Berserker : Berserk replaces Berserk
 	Pickup:
 		TNT1 A 0 A_GiveInventory("ICD_BerserkHealth", 1)
 		TNT1 A 0 A_GiveInventory("PowerStrength", 1)
-//		TNT1 A 0 A_SelectWeapon("ICD_Knife") - Does it jump to the knife?
+		TNT1 A 0 A_SelectWeapon("ICD_Knife")
 		Stop
 	}
 }
