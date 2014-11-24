@@ -14,7 +14,7 @@ ACTOR ICD_ChainsawZombie
 	PainSound "grunt/pain"
 	DeathSound "grunt/death"
 	ActiveSound "grunt/active"
-	DropItem "ICD_Chainsaw"
+	DropItem "ICD_ChainsawPickup"
 	// Obituary "$OB_ZOMBIE" // "%o was killed by a zombieman."
 	// CLOSE_ATTACK=PLAYER_SAW;
 	// SPARE_ATTACK=CHAINSAW_SMOKE;
