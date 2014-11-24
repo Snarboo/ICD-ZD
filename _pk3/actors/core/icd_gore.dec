@@ -156,6 +156,7 @@ ACTOR ICD_Red_Splash
 	Projectile
 	-NOGRAVITY
 	+THRUACTORS
+	+MOVEWITHSECTOR // - Added by Snarboo
 	States
 	{
 		Spawn:
