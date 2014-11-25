@@ -1,0 +1,113 @@
+// The dreaded M16 zombie implemented by wildweasel.
+
+ACTOR ICD_M16Zombie
+{
+	Health 100
+	Radius 20
+	Height 56
+	Speed 8
+	PainChance 200
+	Monster
+	+FLOORCLIP
+	SeeSound "grunt/sight"
+	AttackSound "weapons/assaultrifle/fire"
+	PainSound "grunt/pain"
+	DeathSound "grunt/death"
+	ActiveSound "grunt/active"
+	Obituary "$OB_ZOMBIE" // "%o was killed by a zombieman."
+	DropItem "ICD_AssaultRiflePickup"
+	States
+	{
+	Spawn:
+		PLA4 A 5 A_Look
+		Loop
+	See:
+		PLA4 AABBCCDD 3 A_Chase
+		Loop
+	Missile:
+		PLA4 E 0 A_PlaySound("grunt/sight") //PLAYSOUND("POSIT?"),
+		PLA4 E 10 A_FaceTarget
+		PLA4 E 0 A_FaceTarget // Same as Cory's original, leaving it alone.
+		PLA4 F 2 BRIGHT A_CustomBulletAttack(4, 4, 1, random(4,16), "ICD_BulletPuff", 400, CBAF_NORANDOM) //RANGE_ATTACK,
+		PLA4 F 0 BRIGHT A_Jump(179,2)
+		PLA4 F 0 BRIGHTA_CustomMissile("ICD_TRACER1", 32, 0, frandom(-1,1)) ////SPARE_ATTACK(MARINE_TRACER_1),
+		PLA4 F 0 BRIGHT A_CustomMissile("ICD_SSGSmoke1", 30,5,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5)) ////SPARE_ATTACK(ENEMY_SMOKE),
+		PLA4 E 2  A_CustomMissile("ICD_MinigunCasingSpawner", 32, 0, frandom(-35,-25))//SPARE_ATTACK(ENEMY_CASING4),
+		PLA4 F 2 BRIGHT A_CustomBulletAttack(4, 4, 1, random(4,16), "ICD_BulletPuff", 400, CBAF_NORANDOM) //RANGE_ATTACK,
+		PLA4 F 0 BRIGHT A_CustomMissile("ICD_SSGSmoke1", 30,5,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5)) //SPARE_ATTACK(ENEMY_SMOKE),
+		PLA4 E 2  A_CustomMissile("ICD_MinigunCasingSpawner", 32, 0, frandom(-35,-25))//SPARE_ATTACK(ENEMY_CASING4),
+		PLA4 F 2 BRIGHT A_CustomBulletAttack(4, 4, 1, random(4,16), "ICD_BulletPuff", 400, CBAF_NORANDOM) //RANGE_ATTACK,
+		PLA4 F 0 BRIGHT A_CustomMissile("ICD_SSGSmoke1", 30,5,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5)) //SPARE_ATTACK(ENEMY_SMOKE),
+		PLA4 E 2  A_CustomMissile("ICD_MinigunCasingSpawner", 32, 0, frandom(-35,-25))//SPARE_ATTACK(ENEMY_CASING4),
+		PLA4 E 0 A_CposRefire
+		PLA4 E 0 A_Jump(251,1)
+		Goto Missile+2
+		PLA4 E 8 //PLAYSOUND(CLICK2),
+		PLA4 E 4 //PLAYSOUND(M4OUT),
+		PLA4 E 4 //SPARE_ATTACK(M16_CLIP_DROP),
+		PLA4 A 15  
+		PLA4 A 15 //PLAYSOUND(M4IN),
+		PLA4 E 10 //PLAYSOUND(SUZI2),
+		Goto See
+	Pain:
+		PLA4 G 3  
+		PLA4 G 3 A_Pain
+		PLA4 G 0 A_Jump(217,"See") //JUMP(CHASE:1,85%),
+		PLA4 E 0 A_FaceTarget
+		PLA4 E 1 //PLAYSOUND(HGREN2),
+		PLA4 E 0 //SPARE_ATTACK(GRENADE_RING_SPAWN),
+		PLA4 E 0 //SPARE_ATTACK(GRENADE_HANDLE_SPAWN),
+		PLA4 E 12 //SPARE_ATTACK(PLAYER_GREN_DROP),
+		PLA4 E 4 //PLAYSOUND(POSACT),
+		PLA4 C 6 //MOVE_FWD(-5),
+		PLA4 B 6 //MOVE_FWD(-5),
+		PLA4 A 6 //MOVE_FWD(-5),
+		PLA4 D 6 //MOVE_FWD(-5),
+		PLA4 C 6 //MOVE_FWD(-5),
+		PLA4 B 6 //MOVE_FWD(-5),
+		PLA4 A 6 //MOVE_FWD(-5),
+		Goto See
+	Death:
+		PLA4 H 0 A_Jump(26, 5) //JUMP(DEATH:13,10%), //I reorganized this because the grenade drop used to be at the end -ww
+		PLA4 E 1 //PLAYSOUND(HGREN2),
+		PLA4 G 0 //SPARE_ATTACK(GRENADE_RING_SPAWN),
+		PLA4 G 1 //SPARE_ATTACK(GRENADE_HANDLE_SPAWN),
+		PLA4 G 1 //SPARE_ATTACK(PLAYER_GREN_DROP),#DEATH:2;
+		PLA4 H 6 A_Scream
+		PLA4 I 6  
+		PLA4 J 6 A_NoBlocking
+		PLA4 K 6 //DROPITEM(MISSILE_LAUNCHER),
+		PLA4 L 10  
+		PLA4 M 10  
+		PLA4 N 0 A_Jump(38, 2) //JUMP(DEATH:10,15%),
+		PLA4 N -1  
+		Stop
+		PLA4 N 500  
+		PLA4 N 3 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		PLA4 N -1 A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		Stop
+	XDeath:
+		PLA4 O 5
+		PLA4 P 5 A_XScream
+		PLA4 Q 5 A_NoBlocking
+		PLA4 RSTUV 5
+		TNT1 A 0 A_Jump(51,2)
+		PLA4 W -1
+		Stop
+		PLA4 W 500
+		PLA4 W 3 A_SpawnItemEx("ICD_Flies")
+		PLA4 W -1 A_SpawnItemEx("ICD_Flies")
+		Stop
+	Raise:
+		PLA4 K 5
+		PLA4 JIH 5
+		Goto See
+	}
+}
+
+/*
+[M16_ZOMBIE:3044]
+RANGE_ATTACK=ENEMY_M16;
+//SPARE_ATTACK=ENEMY_CASING4;
+
+*/
