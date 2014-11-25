@@ -12,7 +12,7 @@ ACTOR ICD_HWDSpawner : RandomSpawner replaces ChaingunGuy
 	DropItem "ICD_HeavyWeaponDude"//, 255, 
 	DropItem "ICD_UziZombie"//, 255,
 	//DropItem "ICD_SSGSergeant"//, 255,
-	//DropItem "ICD_M16Zombie"//, 255,
+	DropItem "ICD_M16Zombie"//, 255,
 	DropItem "ICD_ChainsawZombie"//, 255,
 }
 	
