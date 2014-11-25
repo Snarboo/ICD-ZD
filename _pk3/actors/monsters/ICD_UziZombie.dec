@@ -48,7 +48,7 @@ ACTOR ICD_UziZombie
 		POSS G 3
 		POSS G 3 A_Pain
 		POSS G 0 A_Jump(217, "See")
-		POSS E 1 A_PlaySound("") //PLAYSOUND(HGREN2),
+		POSS E 1 A_PlaySound("weapons/grenade/hgren2") //PLAYSOUND(HGREN2),
         POSS E 0 //SPARE_ATTACK(GRENADE_RING_SPAWN),
         POSS E 0 //SPARE_ATTACK(GRENADE_HANDLE_SPAWN),
         POSS E 20 A_CustomMissile("ICD_DroppedGrenade") //SPARE_ATTACK(PLAYER_GREN_DROP),
