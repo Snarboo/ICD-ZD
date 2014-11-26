@@ -6,8 +6,8 @@ This is a recreation of Cory Whittle's Immoral Conduct: Special Edition for ZDoo
 ================================================
 
 Credits:
-Original EDGE mod by Cory Whittle. 
-Initial conversion to decorate by Hellser.
-Zip tools courtesy of Kyle873 and Marrub.
+-Original EDGE mod by Cory Whittle. 
+-Initial conversion to decorate by Hellser.
+-Zip tools courtesy of Kyle873 and Marrub.
 
 Any changes or additions by team members will be noted with comments in the code!
