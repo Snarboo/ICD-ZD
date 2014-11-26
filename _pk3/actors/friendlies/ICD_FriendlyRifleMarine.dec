@@ -19,11 +19,10 @@ ACTOR ICD_FriendlyRifleMarine
 	//JUMP_HEIGHT=10;
 	//MAX_FALL=16;
 	Translation 0
-	ACTIVE_SOUND="FEACT?";
-	DEATH_SOUND="FEDTH";
-	PAIN_SOUND="FEPN?";
-	SIGHTING_SOUND="FESIT?";
-	OVERKILL_SOUND="SLOP";
+	ActiveSound "marines/female/active"
+	DeathSound "marines/female/death"
+	PainSound "marines/female/pain"
+	SeeSound "marines/female/sight"
 	//RANGE_ATTACK=PLAYER_M211;
 	//CLOSE_ATTACK=MARINE_BAYONET;
 	//SPARE_ATTACK=ENEMY_CASING4;
