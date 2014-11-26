@@ -8,60 +8,69 @@ ACTOR ICD_FriendlyRifleMarine
 	Speed 16
 	Mass 100
 	PainChance 128
+	MeleeThreshold 64
 	MONSTER
 	+FRIENDLY
 	+JUMPDOWN
 	+DROPOFF
 	+QUICKTORETALIATE
 	+NOTDMATCH
+	-COUNTKILL
 	//SPECIAL=SOLID,SHOOTABLE,DROPOFF,NODEATHMATCH,SLIDER,ATTACK_HURTS,EDGEWALKER,GRAVFALL,NO_GRUDGE;
 	//MINATTACK_CHANCE=70%;
 	//JUMP_HEIGHT=10;
-	//MAX_FALL=16;
+	//MAX_FALL=16; // No idea how to replicate. -ww
 	Translation 0
 	ActiveSound "marines/female/active"
 	DeathSound "marines/female/death"
 	PainSound "marines/female/pain"
 	SeeSound "marines/female/sight"
+	DropItem "ICD_InfantryRifle"
 	//RANGE_ATTACK=PLAYER_M211;
 	//CLOSE_ATTACK=MARINE_BAYONET;
 	//SPARE_ATTACK=ENEMY_CASING4;
 	States
 	{
 	Spawn:
-		RIPL A 4 //SUPPORT_MEANDER,
-		RIPL B 4 //SUPPORT_MEANDER,
-		RIPL C 4 //SUPPORT_MEANDER,
-		RIPL D 4 //SUPPORT_MEANDER;
+		RIPL A 4 A_Wander
+		RIPL A 0 A_Look
+		RIPL B 4 A_Wander
+		RIPL A 0 A_Look
+		RIPL C 4 A_Wander
+		RIPL A 0 A_Look
+		RIPL D 4 A_Wander 
+		RIPL A 0 A_Look 
 		Loop
 	See:
 		RIPL AABBCCDD 2 A_Chase
 		Loop
 	Melee:
 		RIPL E 2 A_FaceTarget
-		RIPL E 0 //Melee swing noise here. CLOSEATTEMPTSND,
+		RIPL E 0 A_PlaySound("weapons/generic/swing",5) //Melee swing noise here. CLOSEATTEMPTSND,
 		RIPL E 2 A_FaceTarget
-		RIPL E 0 //MOVE_FWD(2),
-		RIPL E 10 //CLOSE_ATTACK,
+		RIPL E 0 ThrustThing(angle*256/360, 2, 0, 0) //MOVE_FWD(2),
+		RIPL E 10 A_CustomMeleeAttack(6, "weapons/knife/knifegore", "null") //CLOSE_ATTACK,
 		Goto See
 	Missile:
 		RIPL E 4 A_FaceTarget
-		RIPL F 4 BRIGHT //RANGE_ATTACK,
-		RIPL F 0 BRIGHT //SPARE_ATTACK(ENEMY_SMOKE),
-		RIPL E 3 //SPARE_ATTACK,
-		RIPL E 0 //REFIRE_CHECK,
-		RIPL E 0 //JUMP(MISSILE 1,99%),
-		RIPL E 8 //PLAYSOUND(CLICK2),
-		RIPL E 4 //PLAYSOUND(SNREL),
+		RIPL E 0 A_PlaySound("weapons/infantryrifle/fire", CHAN_WEAPON)
+		RIPL F 4 BRIGHT A_CustomBulletAttack(0,0,2,12,"ICD_BulletPuff")//RANGE_ATTACK,
+		RIPL F 0 BRIGHT A_CustomMissile("ICD_SSGSmoke1", 30,5,frandom(-5,5),CMF_OFFSETPITCH,frandom(-5,5)) //SPARE_ATTACK(ENEMY_SMOKE),
+		RIPL E 3 A_CustomMissile("ICD_MinigunCasingSpawner", 32, 0, frandom(-35,-25)) //SPARE_ATTACK,
+		RIPL E 0 A_CPosRefire
+		Goto Missile
+		RIPL E 0 A_Jump(251, "See")
+		RIPL E 8 A_PlaySound("weapons/generic/emptyclick2") //PLAYSOUND(CLICK2),
+		RIPL E 4 A_PlaySound("weapons/infantryrifle/reload") //PLAYSOUND(SNREL),
 		RIPL E 4 //SPARE_ATTACK(RIFLE_CLIP_DROP),
 		RIPL A 49 
-		RIPL E 10 //PLAYSOUND(BOLT2),
+		RIPL E 10 A_PlaySound("weapons/infantryrifle/bolt") //PLAYSOUND(BOLT2),
 		Goto See
 	Pain:
 		RIPL G 3 
 		RIPL G 3 A_Pain
 		Goto See //This used to be #IDLE instead of #CHASE but I'm assuming that's a mistake
-	// Jump  // I have no idea where this is called but it's getting left in here -ww
+	// Jump  // This is apparently called in EDGE if a monster has JUMP_HEIGHT defined but I can't come up with equivalent behavior -ww
 		//STATES(JUMP)=RIPL A 3 
 		//RIPL A 3 
 		//Goto See
@@ -75,9 +84,10 @@ ACTOR ICD_FriendlyRifleMarine
 		RIPL M 7 
 		RIPL N 0 A_Jump(38,2) //JUMP(DEATH 10,15%),
 		RIPL N -1 
+		Stop
 		RIPL N 500 
-		RIPL N 3 //DROPITEM(FLIES),
-		RIPL N -1 //DROPITEM(FLIES);
+		RIPL N 3  A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		RIPL N -1  A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES);
 	XDeath:
 		PLAY O 5 
 		PLAY P 5 A_XScream
@@ -88,10 +98,11 @@ ACTOR ICD_FriendlyRifleMarine
 		PLAY U 5 
 		PLAY V 5 
 		PLAY W 0 A_Jump(38,2)
-		PLAY W -1 
+		PLAY W -1
+		Stop
 		PLAY W 400 
-		PLAY W 3 //DROPITEM(FLIES),
-		PLAY W -1 //DROPITEM(FLIES);
+		PLAY W 3  A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES),
+		PLAY W -1  A_SpawnItemEx("ICD_Flies") //DROPITEM(FLIES);
 	Raise:
 		RIPL KJIH 5 
 		Goto Spawn

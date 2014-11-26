@@ -2,6 +2,7 @@
 
 ACTOR ICD_HelperSpawner : RandomSpawner replaces Megasphere
 {
+	+FRIENDLY
 	DropItem "ICD_FriendlyRifleMarine"
 	// DropItem "ICD_FriendlyPistolMarine"
 	// DropItem "ICD_FriendlyM16Marine"
