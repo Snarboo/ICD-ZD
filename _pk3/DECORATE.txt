@@ -88,3 +88,4 @@
 #include "actors/monsters/icd_uzizombie.dec" // Uzi zombie.
 #include "actors/monsters/icd_chainsawzombie.dec" // Chainsaw zombie.
 #include "actors/monsters/icd_m16zombie.dec" // Assault rifle zombie.
+#include "actors/monsters/icd_supershotgunguy.dec" // SSG zombie.
