@@ -59,13 +59,17 @@ ACTOR ICD_SawedOffPickup : CustomInventory
 			SAWD L -1
 			Stop
 		Pickup:
-			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 0, "Pickup.Fail")
+			TNT1 A 0 A_JumpIfInventory("ICD_Shells", 0, "Pickup.Fail1")
 			TNT1 A 0 A_JumpIfInventory("ICD_SawedOff", 1, "Pickup.Ammo")
+		Pickup.Gun:
 			TNT1 A 0 A_GiveInventory("ICD_SawedOff", 1)
 		Pickup.Ammo:
 			TNT1 A 0 A_GiveInventory("ICD_Shells", 3)
 			Stop
-		Pickup.Fail:
+		Pickup.Fail1:
+			TNT1 A 0 A_JumpIfInventory("ICD_SawedOff", 1, "Pickup.Fail2") // Allow Sawed-Off to be picked up anyway if player does not have one. -ww
+			Goto Pickup.Gun
+		Pickup.Fail2:
 			TNT1 A 0
 			Fail
 	}
