@@ -1,0 +1,35 @@
+// Another new SNDINFO lump specifically for the friendly marines. -ww
+
+// Female Marine
+$random marines/female/active { feact1 feact2 feact3 feact4 feact5 }
+feact1 DSFEACT1
+feact2 DSFEACT2
+feact3 DSFEACT3
+feact4 DSFEACT4
+feact5 DSFEACT5
+$random marines/female/pain { fepn1 fepn2 fepn3 fepn4 }
+fepn1 DSFEPN1
+fepn2 DSFEPN2
+fepn3 DSFEPN3
+fepn4 DSFEPN4
+$random marines/female/sight { fesit1 fesit2 fesit3 fesit4 }
+fesit1 DSFESIT1
+fesit2 DSFESIT2
+fesit3 DSFESIT3
+fesit4 DSFESIT4
+marines/female/death DSFEDTH
+
+// Male Marine
+
+$random marines/male/active { mmact1 mmact2 mmact3 }
+mmact1 DSmmact1
+mmact2 DSmmact2
+mmact3 DSmmact3
+$random marines/male/pain { mmpn1 mmpn2 mmpn3 }
+mmpn1 DSmmpn1
+mmpn2 DSmmpn2
+mmpn3 DSmmpn3
+$random marines/male/sight { mmsit1 mmsit2 }
+mmsit1 DSMMSIT1
+mmsit2 DSMMSIT2
+marines/male/death DSMMDTH
