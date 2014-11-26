@@ -1,0 +1,9 @@
+// The co-op marine spawner, implemented by wildweasel
+
+ACTOR ICD_HelperSpawner : RandomSpawner replaces Megasphere
+{
+	DropItem "ICD_FriendlyRifleMarine"
+	// DropItem "ICD_FriendlyPistolMarine"
+	// DropItem "ICD_FriendlyM16Marine"
+	// DropItem "ICD_FriendlySSGMarine"
+}
