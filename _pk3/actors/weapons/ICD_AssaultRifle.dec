@@ -4,7 +4,7 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 	Weapon.SelectionOrder 1900
 	Weapon.AmmoUse 1
 	Weapon.AmmoType "ICD_AssaultRifleMagazine"
-	Weapon.AmmoGive2 12
+	Weapon.AmmoGive2 0
 	Weapon.AmmoType2 "ICD_RifleAmmo"
 	Obituary "%o was filled with lead from %k's assault rifle!"
 	+WEAPON.NOALERT

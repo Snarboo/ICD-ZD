@@ -107,9 +107,19 @@ ACTOR ICD_AssaultRiflePickup : CustomInventory replaces RocketLauncher //Renamed
 			MGUN A -1
 			Stop
 		Pickup:
+			TNT1 A 0 A_JumpIfInventory("ICD_RifleAmmo", 0, "Pickup.Fail1")
+			TNT1 A 0 A_JumpIfInventory("ICD_AssaultRifle", 1, "Pickup.Ammo")
+		Pickup.Gun:
 			TNT1 A 0 A_GiveInventory("ICD_AssaultRifle", 1)
-			TNT1 A 0 A_GiveInventory("ICD_RifleAmmo", 23)
+		Pickup.Ammo:
+			TNT1 A 0 A_GiveInventory("ICD_RifleAmmo", 45)
 			Stop
+		Pickup.Fail1:
+			TNT1 A 0 A_JumpIfInventory("ICD_AssaultRifle", 1, "Pickup.Fail2") // Allow weapon to be picked up anyway if player does not have one. -ww
+			Goto Pickup.Gun
+		Pickup.Fail2:
+			TNT1 A 0
+			Fail
 	}
 }
 
