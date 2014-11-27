@@ -13,8 +13,23 @@ ACTOR ICD_DoomPlayer : PlayerPawn replaces DoomPlayer
 	Player.StartItem "ICD_SilentPistol"
 	Player.StartItem "ICD_Knife"
 	Player.StartItem "ICD_FlareWeapon"
+	// All weapons should start loaded since EDGE did the same, I think? -ww
+	Player.StartItem "ICD_ChainsawGas", 2150
 	Player.StartItem "ICD_PistolMagazine", 12
+	Player.StartItem "ICD_DualPistolMagazine", 24
 	Player.StartItem "ICD_SPistolMagazine", 12
+	Player.StartItem "ICD_RemingtonMagazine", 8
+	Player.StartItem "ICD_SSGAmmo", 2
+	Player.StartItem "ICD_FlakRemingtonMagazine", 8
+	Player.StartItem "ICD_UziMagazine", 30
+	Player.StartItem "ICD_DualUziMagazine", 60
+	Player.StartItem "ICD_40mmMagazine", 5
+	Player.StartItem "ICD_AssaultRifleMagazine", 45
+	Player.StartItem "ICD_InfantryRifleMagazine", 20
+	Player.StartItem "ICD_SawedOffMagazine", 6
+	Player.StartItem "ICD_BerettaMagazine", 15
+	Player.StartItem "ICD_RevolverMagazine", 6
+	Player.StartItem "ICD_MinigunMagazine", 100
 	Player.StartItem "Fist"
 	Player.StartItem "ICD_Bullets", 38
 	Player.StartItem "ICD_ArmorStart", 1
