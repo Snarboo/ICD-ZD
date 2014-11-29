@@ -1,4 +1,4 @@
-ACTOR ICD_DoubleBarrel : BaseWeapon replaces SuperShotgun
+ACTOR ICD_DoubleBarrel : BaseWeapon // replaces SuperShotgun
 {
 	Game Doom
 	Weapon.AmmoUse 1

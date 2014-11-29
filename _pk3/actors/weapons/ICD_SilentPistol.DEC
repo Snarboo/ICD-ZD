@@ -4,7 +4,7 @@ ACTOR ICD_SilentPistol : BaseWeapon
 	Weapon.SelectionOrder 1900
 	Weapon.AmmoUse 1
 	Weapon.AmmoType "ICD_SPistolMagazine"
-	Weapon.AmmoGive2 6
+	//Weapon.AmmoGive2 6
 	Weapon.AmmoType2 "ICD_Bullets"
 	Obituary "$OB_MPPISTOL"
 	Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"

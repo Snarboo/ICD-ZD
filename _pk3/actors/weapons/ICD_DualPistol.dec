@@ -4,7 +4,7 @@ ACTOR ICD_DualPistol : BaseWeapon
 	Weapon.SelectionOrder 1900
 	Weapon.AmmoUse 0
 	Weapon.AmmoType "ICD_DualPistolMagazine"
-	Weapon.AmmoGive2 12
+	//Weapon.AmmoGive2 12
 	Weapon.AmmoType2 "ICD_Bullets"
 	Obituary "%o was in the way of %k's Dualies!"
 	Inventory.Pickupmessage "$PICKUP_PISGOL_DROPPED"
