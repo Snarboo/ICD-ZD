@@ -21,7 +21,7 @@ ACTOR ICD_Remington : BaseWeapon
 			SHTG A 1 A_Lower
 			Loop
 		Ready:
-			TNT1 A 0 A_JumpIfInventory("ICD_FlakUpgrade",1,"Upgrade") // - Changed by Snarboo
+			TNT1 A 0 A_JumpIfInventory("ICD_FlakRemington",1,"Upgrade") // - Changed by Snarboo
 			SHTG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 			Loop
 		Fire:

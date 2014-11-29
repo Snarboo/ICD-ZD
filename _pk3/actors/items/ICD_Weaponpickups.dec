@@ -217,6 +217,21 @@ ACTOR ICD_40MMPickup : CustomInventory replaces CellPack // - Added by Snarboo
 	}
 }
 
+ACTOR ICD_EmptyFlakPack : ICD_GS_UsedItemTemplate
+// Dropped by the Flak Upgrade Pickup (Snarboo)
+{
+	Scale 0.9
+	States
+	{
+	Spawn:
+		TNT1 A 0 
+		FLMD B 2 A_PlaySound("weapons/generic/weaponup", CHAN_BODY)
+		FLMD B 200
+		FLMD B 1 A_FadeOut(0.01)
+		Wait
+	}
+}
+
 ACTOR ICD_FlakRemingtonPickup : CustomInventory replaces BFG9000 // - Added by Snarboo
 // This was mostly taken from the DDF files (Snarboo)
 {
@@ -225,7 +240,7 @@ ACTOR ICD_FlakRemingtonPickup : CustomInventory replaces BFG9000 // - Added by S
 	Scale 0.9
 	Inventory.PickupSound "weapons/flakremington/cock"
 	Inventory.PickupMessage "$GotFlakPack"
-//	Inventory.PickupFlash "ICD_EmptyFlakPack"
+	Inventory.PickupFlash "ICD_EmptyFlakPack"
 	States
 	{
 	Spawn: 
