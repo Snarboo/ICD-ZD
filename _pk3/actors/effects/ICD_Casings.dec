@@ -172,7 +172,8 @@ ACTOR ICD_ShotgunShellSpawner2 : ICD_ShellSpawner // By Crudux Cruo
 		Death:
 			TNT1 A 0 A_CustomMissile("ICD_GS_EmptyShell2",2,0,90+random(-15,15),2,55+random(-10,10))
 			Stop
-
+	}
+}
 
 ACTOR ICD_BerettaCasingSpawner : ICD_ShellSpawner
 {
