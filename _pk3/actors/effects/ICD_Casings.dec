@@ -108,6 +108,46 @@ ACTOR ICD_GS_EmptyShell : ICD_GS_CasingTemplate
 	}
 }
 
+ACTOR ICD_GS_EmptyShell2 : ICD_GS_CasingTemplate // By Crudux Cruo
+{
+	Scale 0.78
+	BounceSound "weapons/shellbounce"
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			CAS4 A 0
+			TNT1 A 0 A_ScaleVelocity (frandom(2,3))
+			CAS4 A 0 A_Jump(256, "Spin1", "Spin2", "Spin3", "Spin4", "Spin5")
+			Goto Spawn+1
+		Spin1:
+			CAS4 ABCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin2:
+			CAS4 EFCD 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin3:
+			CAS4 DCBA 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin4:
+			CAS4 BCDE 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Spin5:
+			CAS4 CDEF 3 A_CustomMissile("ICD_GS_EmptyCasingSmoke",0,0,0,2,0)
+			Loop
+		Death:
+			CAS4 A 0 A_Jump(256,"Lie1","Lie2")
+		 	Loop
+		Lie1:
+			CAS4 C 2500
+			Stop
+		Lie2:
+			CAS4 A 2500
+			stop
+	}
+}
+
+
 /*----------------------------------------
  SPAWNERS
 ----------------------------------------*/
@@ -120,6 +160,17 @@ ACTOR ICD_ShotgunShellSpawner1 : ICD_ShellSpawner
 			TNT1 A 1
 		Death:
 			TNT1 A 0 A_CustomMissile("ICD_GS_EmptyShell",2,0,90+random(-15,15),2,55+random(-10,10))
+			Stop
+	}
+}
+ACTOR ICD_ShotgunShellSpawner2 : ICD_ShellSpawner // By Crudux Cruo
+{
+	States
+	 {
+		Spawn:
+			TNT1 A 1
+		Death:
+			TNT1 A 0 A_CustomMissile("ICD_GS_EmptyShell2",2,0,90+random(-15,15),2,55+random(-10,10))
 			Stop
 	}
 }
