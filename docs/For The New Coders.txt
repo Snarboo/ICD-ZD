@@ -69,15 +69,15 @@ ToDo list:
 		- .45 Pistol									[Done]
 		- .45 Pistolx2 (Green Armor)							[Done]
 	- Class 3
-		- Combat Shotgun								[Half done, fix alt-fire]
-		- Flak Shotgun									[Half done, fix alt-fire]
+		- Combat Shotgun								[Done]
+		- Flak Shotgun									[Done]
 		- Double Barrel									[Done]
 	- Class 4
 		- Uzi SMG (Chaingun)								[Done]
 		- Uzi SMG x2 (God Mode Sphere)							[Done, add pickup]
 	- Class 5
-		- Hand Grenades (Box of Rockets)						[Done, add pickup]
-		- 40mm Grenade Launcher (Cell Pack)						[Needs rework]
+		- Hand Grenades (Box of Rockets)						[Done]
+		- 40mm Grenade Launcher (Cell Pack)						[Done, grenade needs work]
 	- Class 6
 		- M16A1 Assault Rifle (Rocket Launcher)						[Done]
 		- M-211 Infantry Rifle (Plasma Gun)						[Done]
@@ -97,9 +97,9 @@ ToDo list:
 		- Flares									[Done]
 - Monsters
 	- Zombieman										[Done]
-		- Variant	(Chaingunner Spawn)						[In Progress]
+		- Variant	(Chaingunner Spawn)						[Done]
 	- Shotgun Guy										[Done]
-		- Variant	(Chaingunner Spawn)						[ToDo]
+		- Variant	(Chaingunner Spawn)						[Done]
 	- Imp											[Done]
 	- Demon											[Done]
 	- Spectre										[Done]
