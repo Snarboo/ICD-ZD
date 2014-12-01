@@ -3,7 +3,7 @@ ACTOR ICD_SawedOff : BaseWeapon
 	Game Doom
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 0
-	//Weapon.AmmoGive2 3
+//	Weapon.AmmoGive2 3
 	+WEAPON.AMMO_OPTIONAL
 	+WEAPON.NOALERT
 	Weapon.AmmoType 	"ICD_SawedOffMagazine"
@@ -103,6 +103,6 @@ ACTOR ICD_SawedOffMagazine : Ammo
 	Inventory.MaxAmount 6
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 6
-	Inventory.Icon SHELA0
+	Inventory.Icon SAWDL0
 	+INVENTORY.IGNORESKILL
 }

@@ -40,4 +40,5 @@ ACTOR ICD_RocketAmmo : Ammo
 	Ammo.BackpackAmount 0 // The backpack in ICD does not give you rockets, just 
 						  // ups the amount you can carry! (Snarboo)
 	Ammo.BackpackMaxAmount 25
+	Inventory.Icon BFUGA0 // - Added by Snarboo
 }

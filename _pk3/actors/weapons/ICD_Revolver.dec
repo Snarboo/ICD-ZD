@@ -74,6 +74,9 @@ ACTOR ICD_Revolver : BaseWeapon
 			REVG I 3
 			REVG J 3 A_PlaySound("weapons/1911/hammer", CHAN_BODY)
 			Goto Ready
+		Spawn: // - Added by Snarboo
+			HGUN C -1
+			Stop
 	}
 }
 
@@ -82,6 +85,6 @@ ACTOR ICD_RevolverMagazine : Ammo
 	Inventory.MaxAmount 6
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 6
-	Inventory.Icon CLP1C0
+	Inventory.Icon HGUNC0 // - Changed by Snarboo
 	+INVENTORY.IGNORESKILL
 }

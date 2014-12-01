@@ -113,6 +113,6 @@ ACTOR ICD_SSGAmmo : Ammo
 	Inventory.MaxAmount 2
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 2
-	Inventory.Icon SHELA0
+	Inventory.Icon SGN2B0 // - Changed by Snarboo
 	+INVENTORY.IGNORESKILL
 }

@@ -3,6 +3,7 @@ ACTOR ICD_SatchelAmmo : Ammo
 	Inventory.PickupMessage "$GotSatchel"
 	Inventory.PickupSound "weapons/generic/weaponup1"
 	Inventory.MaxAmount 5
+	Inventory.Icon CHRGI0 // - Added by Snarboo
 }
 
 Actor ICD_SatchelPickup : CustomInventory replaces RocketAmmo

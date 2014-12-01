@@ -115,6 +115,9 @@ ACTOR ICD_Remington : BaseWeapon
 		Upgrade:
 			TNT1 A 0 A_SelectWeapon("ICD_FlakRemington")
 			Goto Deselect
+		Spawn:
+			SHOT A -1
+			Stop
 	}
 }
 
@@ -137,6 +140,6 @@ ACTOR ICD_RemingtonMagazine : Ammo
 	Inventory.MaxAmount 8
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 8
-	Inventory.Icon SHELA0
+	Inventory.Icon SHOTA0
 	+INVENTORY.IGNORESKILL
 }

@@ -124,7 +124,7 @@ ACTOR ICD_DualPistol : BaseWeapon
 			TNT1 A 0
 			Goto Reload.InfoPhase
 		Spawn:
-			PISG A -1
+			HGUN A -1
 			Stop
 	}
 }
@@ -141,6 +141,6 @@ ACTOR ICD_DualPistolMagazine : Ammo
 	Inventory.MaxAmount 24
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 24
-	Inventory.Icon CLIPB0
+	Inventory.Icon HGUNA0 // - Changed by Snarboo
 	+INVENTORY.IGNORESKILL
 }

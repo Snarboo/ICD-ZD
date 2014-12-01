@@ -4,7 +4,7 @@ ACTOR ICD_Pistol : BaseWeapon
 	Weapon.SelectionOrder 1900
 	Weapon.AmmoUse 1
 	Weapon.AmmoType "ICD_PistolMagazine"
-	Weapon.AmmoGive2 6
+	Weapon.AmmoGive2 0 // - Changed by Snarboo
 	Weapon.AmmoType2 "ICD_Bullets"
 	Obituary "$OB_MPPISTOL"
 	Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
@@ -78,7 +78,7 @@ ACTOR ICD_Pistol : BaseWeapon
 			TNT1 A 0
 			Goto Reload.InfoPhase
 		Spawn:
-			PIST A -1
+			HGUN A -1
 			Stop
 	}
 }
@@ -88,7 +88,7 @@ ACTOR ICD_PistolMagazine : Ammo
 	Inventory.MaxAmount 12
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 12
-	Inventory.Icon CLIPB0
+	Inventory.Icon HGUNA0 // - Changed by Snarboo
 	+INVENTORY.IGNORESKILL
 }
 

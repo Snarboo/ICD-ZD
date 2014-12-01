@@ -7,6 +7,7 @@ ACTOR ICD_Satchel : BaseWeapon
 	Inventory.PickupMessage "$Got40mm"
 	Weapon.AmmoType "ICD_SatchelAmmo"
 	+WEAPON.AMMO_OPTIONAL
+	+INVENTORY.UNDROPPABLE // Shouldn't be able to drop these (Snarboo)
 	States
 	{
 		Select:

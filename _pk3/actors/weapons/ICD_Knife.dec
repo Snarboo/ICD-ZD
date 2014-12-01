@@ -73,13 +73,13 @@ ACTOR ICD_Knife : BaseWeapon
 ACTOR ICD_KnifeAmmo : Ammo
 {
 	Game Doom
+	Scale 0.8
 	Inventory.PickupMessage "$GotKnife"
 	Inventory.Amount 1
 	Inventory.MaxAmount 5
 	Ammo.BackpackAmount 2
 	Ammo.BackpackMaxAmount 10
-	Scale 0.8
-	Inventory.Icon "SHELA0"
+	Inventory.Icon KNFEB0 // - Changed by Snarboo
 	States
 	{
 		Spawn:

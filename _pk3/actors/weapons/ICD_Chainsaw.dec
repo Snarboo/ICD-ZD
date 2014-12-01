@@ -96,7 +96,7 @@ ACTOR ICD_ChainsawGas : Ammo // - Added by Snarboo
 	Inventory.MaxAmount 2150 // Why this amount I have no idea!
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 2150
-	Inventory.Icon TNT1A0
+	Inventory.Icon CSAWA0
 	+INVENTORY.IGNORESKILL
 }
 

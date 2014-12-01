@@ -4,7 +4,7 @@ ACTOR ICD_Minigun : BaseWeapon
 	Weapon.SelectionOrder 1900
 	Weapon.AmmoType1 "ICD_MinigunMagazine"
 	Weapon.AmmoUse1 1
-	// Weapon.AmmoGive2 6 - No idea why this was here (Snarboo)
+//  Weapon.AmmoGive2 6 - No idea why this was here (Snarboo)
 	Weapon.AmmoType2 "ICD_RifleAmmo"
 	Inventory.Pickupmessage "$GotMinigun"
 	Weapon.UpSound "weapons/generic/weaponup"
@@ -171,6 +171,9 @@ ACTOR ICD_Minigun : BaseWeapon
 		Reload.Restart:
 			TNT1 A 0
 			Goto Reload.InfoPhase
+		Spawn: // - Added by Snarboo
+			MINN A -1
+			Stop
 	}
 }
 
@@ -179,6 +182,6 @@ ACTOR ICD_MinigunMagazine : Ammo
 	Inventory.MaxAmount 100
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 100
-	Inventory.Icon CLIPA0
+	Inventory.Icon MINNA0 // - Changed by Snarboo
 	+INVENTORY.IGNORESKILL
 }

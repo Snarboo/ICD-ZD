@@ -169,6 +169,9 @@ ACTOR ICD_SingleUzi : BaseWeapon
 			UZI3 A 3
 			UZIG A 5
 			Goto Ready
+		Spawn: // - Added by Snarboo
+			USMG A -1
+			Stop
 	}
 }
 
@@ -177,6 +180,6 @@ ACTOR ICD_UziMagazine : Ammo
 	Inventory.MaxAmount 30
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 30
-	Inventory.Icon CLIPB0
+	Inventory.Icon USMGA0
 	+INVENTORY.IGNORESKILL
 }
