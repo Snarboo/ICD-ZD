@@ -10,7 +10,7 @@ ACTOR ICD_AssaultRifle : BaseWeapon
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
 	Weapon.UpSound "weapons/generic/weaponup"
-	Tag "Assault Rifle"
+	Tag "M16A1 Assault Rifle"
 	States
 	{
 		Select:

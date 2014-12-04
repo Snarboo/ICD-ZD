@@ -8,7 +8,7 @@ ACTOR ICD_DualPistol : BaseWeapon
 	Weapon.AmmoType2 "ICD_Bullets"
 	Obituary "%o was in the way of %k's Dualies!"
 	Inventory.Pickupmessage "$PICKUP_PISGOL_DROPPED"
-	Tag "Dual M1911"
+	Tag "Dual .45 Pistols"
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
 	States

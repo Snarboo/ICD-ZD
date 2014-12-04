@@ -7,7 +7,7 @@ ACTOR ICD_InfantryRifle : BaseWeapon replaces PlasmaRifle
 	Weapon.AmmoType2 "ICD_RifleAmmo"
 	Inventory.PickupMessage "$GotRifle"
 	Weapon.UpSound "weapons/generic/weaponup"
-	Tag "Infantry Rifle"
+	Tag "M211 Sig-Cow Infantry Rifle"
 	Obituary "%o was sniped by %k."
 	HitObituary "%o was shanked by %k."
 	+NOEXTREMEDEATH

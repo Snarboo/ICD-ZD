@@ -7,7 +7,7 @@ ACTOR ICD_FlakRemington : BaseWeapon
 	Weapon.AmmoType "ICD_FlakRemingtonMagazine"
 	Weapon.AmmoType2 "ICD_FlakAmmo" // - Changed by Snarboo
 	Inventory.PickupMessage "$GotRemington"
-	Tag "Flak Remington"
+	Tag "Upgraded Combat Shotgun"
 	Obituary "%k flakked %o."
 	Weapon.UpSound "weapons/generic/weaponup"
 	+WEAPON.AMMO_OPTIONAL

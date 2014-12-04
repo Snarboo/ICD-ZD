@@ -7,7 +7,7 @@ ACTOR ICD_Revolver : BaseWeapon
 	Inventory.Pickupmessage "Yes, milord."
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
-	Tag ".357 Revolver"
+	Tag ".357 Magnum Pistol"
 	States
 	{
 		Select:

@@ -3,7 +3,7 @@ ACTOR ICD_Satchel : BaseWeapon
 {
 	Game Doom
 	Weapon.UpSound "weapons/generic/weaponup"
-	Tag "40mm Grenade Launcher"
+	Tag "Satchel Charges"
 	Inventory.PickupMessage "$Got40mm"
 	Weapon.AmmoType "ICD_SatchelAmmo"
 	+WEAPON.AMMO_OPTIONAL

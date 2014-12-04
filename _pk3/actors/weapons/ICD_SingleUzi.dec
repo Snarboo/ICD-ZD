@@ -6,7 +6,7 @@ ACTOR ICD_SingleUzi : BaseWeapon
 	Weapon.AmmoType "ICD_UziMagazine"
 	Weapon.AmmoType2 "ICD_Bullets"
 	Inventory.PickupMessage "$GotChainGun"
-	Tag "Single Uzi"
+	Tag "Uzi SMG"
 	Weapon.UpSound "weapons/generic/weaponup"
 	+WEAPON.AMMO_OPTIONAL
 	+WEAPON.NOALERT

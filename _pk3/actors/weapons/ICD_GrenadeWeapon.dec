@@ -4,7 +4,7 @@ ACTOR ICD_GrenadeWeapon : BaseWeapon
 	Weapon.AmmoType1 "ICD_RocketAmmo"
 	Weapon.AmmoUse1 1
 	Weapon.UpSound "weapons/grenade/flare"
-	Tag "Grenades"
+	Tag "Hand Grenades"
 	Inventory.PickupMessage "$GotBFG"
 	+INVENTORY.UNDROPPABLE // Doesn't make much sense to be able to drop these (Snarboo)
 	States

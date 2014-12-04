@@ -2,7 +2,7 @@ ACTOR ICD_FlareWeapon : BaseWeapon
 {
 	Game Doom
 	Inventory.PickupMessage "$GotSawedOff"
-	Tag "Flares"
+	Tag "Marking Flares"
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
 	States

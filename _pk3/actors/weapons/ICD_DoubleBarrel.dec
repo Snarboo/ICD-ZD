@@ -7,7 +7,7 @@ ACTOR ICD_DoubleBarrel : BaseWeapon replaces SuperShotgun
 	Weapon.AmmoType "ICD_SSGAmmo"
 	Weapon.AmmoType2 "ICD_Shells"
 	Inventory.PickupMessage "$GotDoubleBarrel"
-	Tag "Double Barrel Shotgun"
+	Tag "Double Barreled Shotgun"
 	Weapon.UpSound "weapons/generic/weaponup"
 	Obituary "%o received a wide shot from $k!"
 	+WEAPON.AMMO_OPTIONAL

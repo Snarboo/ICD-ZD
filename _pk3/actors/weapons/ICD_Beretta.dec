@@ -7,7 +7,7 @@ ACTOR ICD_Beretta : BaseWeapon
 	Weapon.AmmoType2 "ICD_Bullets"
 	Obituary "%o tasted %k's Beretta!"
 	Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
-	Tag "Beretta 92F"
+	Tag "9mm Automatic Pistol"
 	+WEAPON.NOALERT
 	+WEAPON.AMMO_OPTIONAL
 	States
